@@ -1,0 +1,19 @@
+{
+  "games": 100,
+  "wins": 72,
+  "losses": 19,
+  "draws": 9,
+  "win_rate": 0.72,
+  "score": 0.765,
+  "elo": 205.03742915275254,
+  "ci_lo": 0.6251178763865427,
+  "ci_hi": 0.7986044083240164,
+  "p_value": 5.412543907703888e-06,
+  "significant": true,
+  "avg_length": 76.59,
+  "avg_ai_pcs": 3.64,
+  "avg_rnd_pcs": 1.41,
+  "total_time": 159.44180512428284,
+  "model": "model_latest.pt",
+  "timestamp": "2026-03-15 18:20:58"
+}

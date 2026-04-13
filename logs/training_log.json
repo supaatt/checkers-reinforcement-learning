@@ -1,0 +1,47 @@
+[
+  {
+    "iteration": 1,
+    "examples": 4374,
+    "stats": {
+      "black_wins": 17,
+      "white_wins": 23,
+      "draws": 10,
+      "total_moves": 4374
+    },
+    "win_rate": 0.8611111111111112,
+    "time": 9928.320368766785,
+    "policy_loss": 1.746817722215372,
+    "value_loss": 0.22022221638985418,
+    "total_loss": 1.8569288323907291
+  },
+  {
+    "iteration": 2,
+    "examples": 5886,
+    "stats": {
+      "black_wins": 5,
+      "white_wins": 21,
+      "draws": 24,
+      "total_moves": 5886
+    },
+    "win_rate": 0.42105263157894735,
+    "time": 15058.26833319664,
+    "policy_loss": 1.2721971119940279,
+    "value_loss": 0.11137087680283002,
+    "total_loss": 1.3278825506940484
+  },
+  {
+    "iteration": 3,
+    "examples": 5298,
+    "stats": {
+      "black_wins": 15,
+      "white_wins": 16,
+      "draws": 19,
+      "total_moves": 5298
+    },
+    "win_rate": 0.95,
+    "time": 37010.989513874054,
+    "policy_loss": 1.2494055560096302,
+    "value_loss": 0.15089898216135705,
+    "total_loss": 1.3248550481266446
+  }
+]
