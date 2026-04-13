@@ -1,12 +1,11 @@
 """
-AlphaZero Checkers — Neural Network
-=====================================
-Dual-head residual network:
+neural network
+
+dual-head residual network:
   - Shared residual tower
   - Policy head  -> probability distribution over moves
   - Value head   -> scalar evaluation [-1, +1]
 
-Optimized for Apple MPS, CUDA, or CPU.
 """
 
 import torch

@@ -1,10 +1,10 @@
 """
-AlphaZero Checkers — Evaluate Model vs Random Play
-====================================================
-Loads a .pt checkpoint and plays it against a random-move opponent.
+evaluate model vs random
+
+loads a .pt checkpoint and plays it against a random-move opponent.
 Reports win/loss/draw, Elo estimate, statistical significance, and verdict.
 
-Usage:
+how to use:
     python test.py                                          # latest checkpoint
     python test.py --model checkpoints/model_iter_0050.pt   # specific checkpoint
     python test.py --games 200 --simulations 100            # more games / sims
@@ -31,7 +31,7 @@ from neural_network import NetworkWrapper
 from mcts import MCTS
 
 
-# ── Players ─────────────────────────────────────────────────────────
+#Players
 
 class RandomPlayer:
     """Picks a uniformly random legal move."""
@@ -54,7 +54,7 @@ class AIPlayer:
         return move
 
 
-# ── Single game ─────────────────────────────────────────────────────
+#Single game
 
 def play_game(ai_player, random_player, ai_color, max_moves=200):
     state = CheckersState()
@@ -215,7 +215,7 @@ def print_results(r, model_label):
 {'━' * 58}""")
 
 
-# ── Entry point ─────────────────────────────────────────────────────
+#Entry point
 
 def main():
     ap = argparse.ArgumentParser(description="Evaluate AlphaZero Checkers vs random")

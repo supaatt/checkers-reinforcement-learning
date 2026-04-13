@@ -1,7 +1,7 @@
 """
-AlphaZero Checkers — Full Game Engine
-======================================
-Standard American/English checkers (8x8):
+checkers game engine
+
+English checkers (8x8):
   - Black moves first
   - Men move diagonally forward; kings move diagonally forward & backward
   - Mandatory jumps (longest capture sequence enforced)
@@ -17,7 +17,7 @@ from config import (
     BLACK, WHITE, NetworkConfig,
 )
 
-# ── Coordinate helpers ──────────────────────────────────────────────
+#Coordinate helpers
 
 def sq_to_rc(sq):
     """Convert square index (0-31) to (row, col) on 8x8 board."""
@@ -77,7 +77,7 @@ class CheckersState:
             move_count=self.move_count,
         )
 
-    # ── Piece queries ───────────────────────────────────────────────
+    #Piece queries
 
     def is_player_piece(self, r, c, player):
         p = self.board[r][c]
@@ -91,7 +91,7 @@ class CheckersState:
     def is_opponent_piece(self, r, c, player):
         return self.is_player_piece(r, c, -player)
 
-    # ── Move generation ─────────────────────────────────────────────
+    #Move generation
 
     def _forward_dirs(self, player, r, c):
         piece = self.board[r][c]
@@ -174,7 +174,7 @@ class CheckersState:
             return [j for j in jump_moves if len(j) == max_len]
         return simple_moves
 
-    # ── Apply move ──────────────────────────────────────────────────
+    #Apply move
 
     def apply_move(self, move):
         new_state = self.copy()
@@ -206,7 +206,7 @@ class CheckersState:
         new_state.current_player = -self.current_player
         return new_state
 
-    # ── Terminal checks ─────────────────────────────────────────────
+    #Terminal checks
 
     def is_terminal(self):
         if self.no_progress_count >= 80:
@@ -228,7 +228,7 @@ class CheckersState:
 
         return False, 0
 
-    # ── State encoding for neural network ───────────────────────────
+    #State encoding for neural network
 
     def encode(self):
         planes = np.zeros((5, BOARD_SIZE, BOARD_SIZE), dtype=np.float32)
@@ -249,7 +249,7 @@ class CheckersState:
 
         return planes
 
-    # ── Move encoding / decoding ────────────────────────────────────
+    #Move encoding / decoding
 
     @staticmethod
     def move_to_index(move):

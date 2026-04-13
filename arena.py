@@ -1,10 +1,7 @@
 """
-AlphaZero Checkers — Arena (Model Evaluation)
-===============================================
-Pit two models against each other to decide which is stronger.
+arena (Model Evaluation)
+set two models against each other to decide which is stronger
 
-FIX: Uses pure win rate among decisive games only (wins / (wins + losses))
-to avoid the 0.25 quantization problem caused by draw-diluted scoring.
 """
 
 import numpy as np
@@ -91,7 +88,7 @@ class Arena:
                 print(f"  Eval game {i+1}/{num_games}: "
                       f"New={net1_wins} Old={net2_wins} Draw={draws}")
 
-        # ── FIXED win rate: only count decisive games ───────────────
+        #FIXED win rate: only count decisive games
         decisive = net1_wins + net2_wins
         if decisive > 0:
             win_rate = net1_wins / decisive

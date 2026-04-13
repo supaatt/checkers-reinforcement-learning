@@ -1,11 +1,11 @@
 """
-AlphaZero Checkers — Configuration & Hyperparameters
+Config
 """
 
 import torch
 
 def get_device():
-    """Select best available device: MPS (Apple Silicon) > CUDA > CPU."""
+    """Select available device: MPS (Apple Silicon) > CUDA > CPU."""
     if hasattr(torch.backends, 'mps') and torch.backends.mps.is_available():
         return torch.device("mps")
     elif torch.cuda.is_available():
@@ -29,7 +29,7 @@ WHITE_KING= 4
 BLACK =  1   # moves first
 WHITE = -1
 
-# ── Neural Network ──────────────────────────────────────────────────
+#Neural Network
 class NetworkConfig:
     NUM_INPUT_PLANES = 5   # black_men, black_kings, white_men, white_kings, turn
     BOARD_H = 8
@@ -45,7 +45,7 @@ class NetworkConfig:
     LR_MILESTONES = [100, 200, 300]
     LR_GAMMA = 0.1
 
-# ── MCTS ────────────────────────────────────────────────────────────
+#MCTS
 class MCTSConfig:
     NUM_SIMULATIONS = 150
     C_PUCT = 1.5
@@ -54,12 +54,12 @@ class MCTSConfig:
     TEMPERATURE_THRESHOLD = 15
     TEMPERATURE_INIT = 1.0
 
-# ── Self-Play ───────────────────────────────────────────────────────
+#Self-Play
 class SelfPlayConfig:
     NUM_SELF_PLAY_GAMES = 50
     MAX_GAME_LENGTH = 200
 
-# ── Training ────────────────────────────────────────────────────────
+#Training
 class TrainingConfig:
     NUM_ITERATIONS = 4
     EPOCHS_PER_ITERATION = 10
@@ -72,7 +72,7 @@ class TrainingConfig:
     CHECKPOINT_DIR = "checkpoints"
     LOG_DIR = "logs"
 
-# ── Pygame GUI ──────────────────────────────────────────────────────
+#Pygame GUI
 class GUIConfig:
     WINDOW_W = 1000
     BOARD_PX = 720

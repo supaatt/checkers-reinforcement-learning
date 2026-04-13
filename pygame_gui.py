@@ -1,7 +1,6 @@
 """
-AlphaZero Checkers — Pygame GUI
-=================================
-Interactive interface to play against the trained AI.
+pygame GUI
+interface to play against the AI.
   - Click-to-move with move highlighting
   - AI thinking indicator
   - Undo, new game, difficulty controls
@@ -35,7 +34,7 @@ class CheckersGUI:
         self.title_font = pygame.font.SysFont("Helvetica", G.TITLE_FONT_SIZE, bold=True)
         self.small_font = pygame.font.SysFont("Helvetica", 14)
 
-        # Game state
+        # Gamestate
         self.state = CheckersState()
         self.selected_piece = None
         self.valid_moves_for_selected = []
@@ -93,7 +92,7 @@ class CheckersGUI:
         pygame.quit()
         sys.exit()
 
-    # ── Input ───────────────────────────────────────────────────────
+    #Input
 
     def _handle_click(self, pos):
         x, y = pos
@@ -151,7 +150,7 @@ class CheckersGUI:
             pygame.quit()
             sys.exit()
 
-    # ── Game Actions ────────────────────────────────────────────────
+    #Game Actions
 
     def _make_human_move(self, move):
         self.history.append(self.state.copy())
@@ -258,7 +257,7 @@ class CheckersGUI:
         else:
             return "Game Over - AI Wins!"
 
-    # ── Drawing ─────────────────────────────────────────────────────
+    #Drawing
 
     def _draw(self):
         self.screen.fill(G.BG_COLOR)

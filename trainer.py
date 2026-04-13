@@ -1,7 +1,7 @@
 """
-AlphaZero Checkers — Training Pipeline
-========================================
-Manages the replay buffer, training epochs, and iteration loop.
+training pipeline
+
+manage replay buffer, training epochs, and iteration loop.
 """
 
 import numpy as np
@@ -114,5 +114,5 @@ class Trainer:
         if os.path.exists(filepath):
             self.nnet.load(filepath)
             return True
-        print(f"No checkpoint found at {filepath}")
+        print(f"no checkpoint found at {filepath}")
         return False

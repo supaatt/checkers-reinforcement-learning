@@ -1,7 +1,5 @@
 """
-AlphaZero Checkers — Main Entry Point
-=======================================
-Usage:
+how to use : 
     python main.py train          # Start training from scratch
     python main.py train --resume # Resume from latest checkpoint
     python main.py play           # Play against AI (loads latest model)

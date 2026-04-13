@@ -1,7 +1,5 @@
 """
-AlphaZero Checkers — Self-Play
-================================
-Generate training data through self-play games using MCTS.
+generate training data through self-play games using MCTS
 """
 
 import numpy as np

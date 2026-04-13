@@ -1,7 +1,6 @@
 """
-AlphaZero Checkers — Monte Carlo Tree Search
-==============================================
-PUCT-based tree search with neural network evaluations.
+Monte Carlo Tree Search
+
 """
 
 import math
