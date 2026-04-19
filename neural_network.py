@@ -16,7 +16,7 @@ import os
 
 from config import DEVICE, NetworkConfig as NC
 
-
+#CNN
 class ConvBlock(nn.Module):
     def __init__(self, in_channels, out_channels, kernel_size=3, padding=1):
         super().__init__()
@@ -94,7 +94,7 @@ class AlphaZeroNet(nn.Module):
 
 class NetworkWrapper:
     """
-    High-level wrapper: training, saving, loading, inference.
+    wrapper: training, saving, loading, inference.
     """
     def __init__(self, lr=NC.LEARNING_RATE):
         self.net = AlphaZeroNet().to(DEVICE)

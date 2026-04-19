@@ -1,10 +1,12 @@
 # checkers-reinforcement-learning
 
 for BIA Data Associate Programme
-a self learning checkers model inspired by AlphaZero
 
-## Architecture (copied from Alphazero)
+A self-learning checkers AI built from scratch, inspired by AlphaZero.
+Combines Monte Carlo Tree Search with a residual neural network that learns purely
+through self-play. No human game data. No hand-crafted heuristics.
 
+## Architecture 
 
 ```
 
@@ -25,7 +27,6 @@ a self learning checkers model inspired by AlphaZero
 - **Body**: 10 residual blocks, 128 filters each
 - **Policy Head**: 1024 outputs (32×32 source-destination pairs)
 - **Value Head**: single scalar in [-1, +1]
-- **Total parameters**: ~5.1 million
 
 ### MCTS
 - PUCT exploration with neural network priors
@@ -123,7 +124,7 @@ All hyperparameters are in `config.py`:
 | EVAL_GAMES | 40 | Arena evaluation games |
 | WIN_THRESHOLD | 0.55 | Win rate to accept new model |
 
-### Lightweight settings for faster training
+### Lightweight settings for fast training
 
 ```python
 # In config.py
@@ -137,9 +138,7 @@ class TrainingConfig:
     EVAL_GAMES = 20
 ```
 
-With these settings, one iteration takes ~1 hour on Apple Silicon.
-
-### Stronger but slower
+### Stronger but slow
 
 ```python
 class MCTSConfig:
@@ -148,7 +147,6 @@ class MCTSConfig:
 class SelfPlayConfig:
     NUM_SELF_PLAY_GAMES = 150
 ```
-
 
 ## How It Works
 
@@ -160,6 +158,6 @@ class SelfPlayConfig:
    - Value loss: MSE between predicted value and actual game outcome
 
 3. **Evaluation**: The newly trained network plays against the previous best.
-   If it wins >55% of decisive games, it becomes the new best.
+   If it wins >55% of decisive games, it becomes new best.
 
 4. **Repeat**: Each iteration generates more self-play data, trains, and evaluates.
