@@ -4,7 +4,7 @@ generate training data through self-play games using MCTS
 
 import numpy as np
 from checkers_env import CheckersState
-from mcts import MCTS
+from mcts_fast import MCTS
 from config import (
     MCTSConfig as MC, SelfPlayConfig as SP,
     BLACK, WHITE,

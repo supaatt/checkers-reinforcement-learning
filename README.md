@@ -93,7 +93,6 @@ python main.py play --model checkpoints/model_iter_0050.pt
 # Adjust difficulty (MCTS simulations)
 python main.py play --simulations 400
 ```
-
 ### Test model vs random
 ```bash
 # Test latest checkpoint (100 games, 100 sims)
@@ -108,7 +107,30 @@ python test.py --simulations 0 --games 200
 # Test at high simulation count
 python test.py --games 50 --simulations 200
 
+
+```
+### Test model vs other models
+```bash
+python -c "
+from neural_network import NetworkWrapper
+from arena import Arena
+
+# Load the two models you want to compare
+net_a = NetworkWrapper()
+net_a.load('checkpoints/model_iter_0008.pt')
+
+net_b = NetworkWrapper()
+net_b.load('checkpoints/6th.pt')      
+
+# Pit them against each other
+arena = Arena(net_a, net_b, num_simulations=100)
+arena.evaluate(num_games=40, verbose=True)
+"
+```
+
+
 ## Configuration
+
 
 All hyperparameters are in `config.py`:
 

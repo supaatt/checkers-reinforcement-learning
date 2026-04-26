@@ -1,3 +1,21 @@
 torch>=2.0.0
 numpy>=1.24.0
 pygame>=2.5.0
+
+
+
+# python -c "
+# from neural_network import NetworkWrapper
+# from arena import Arena
+
+# # Load the two models you want to compare
+# net_a = NetworkWrapper()
+# net_a.load('checkpoints/model_iter_0008.pt')
+
+# net_b = NetworkWrapper()
+# net_b.load('checkpoints/6th.pt')      
+
+# # Pit them against each other
+# arena = Arena(net_a, net_b, num_simulations=100)
+# arena.evaluate(num_games=40, verbose=True)
+# "

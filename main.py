@@ -69,7 +69,7 @@ def train(args):
 
         # Phase 3: Evaluation
         print(f"\n[Phase 3] Evaluation ({TC.EVAL_GAMES} games)...")
-        arena = Arena(trainer.nnet, best_nnet, num_simulations=50)
+        arena = Arena(trainer.nnet, best_nnet, num_simulations=100)
         n1_wins, n2_wins, draws, win_rate = arena.evaluate(
             num_games=TC.EVAL_GAMES, verbose=True
         )

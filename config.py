@@ -61,7 +61,7 @@ class SelfPlayConfig:
 
 #Training
 class TrainingConfig:
-    NUM_ITERATIONS = 4
+    NUM_ITERATIONS = 100
     EPOCHS_PER_ITERATION = 10
     BATCH_SIZE = 64
     REPLAY_BUFFER_SIZE = 50_000
