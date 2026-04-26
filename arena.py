@@ -6,7 +6,7 @@ set two models against each other to decide which is stronger
 
 import numpy as np
 from checkers_env import CheckersState
-from mcts import MCTS
+from mcts_fast import MCTS
 from config import TrainingConfig as TC, SelfPlayConfig as SP, BLACK, WHITE
 
 
@@ -27,7 +27,7 @@ class Arena:
         """
         state = CheckersState()
 
-        for move_num in range(SP.MAX_GAME_LENGTH):
+        for move_num in range(100): # was range(SP.MAX_GAME_LENGTH):
             done, winner = state.is_terminal()
             if done:
                 break

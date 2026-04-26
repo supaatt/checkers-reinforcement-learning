@@ -28,7 +28,7 @@ from config import (
 )
 from checkers_env import CheckersState
 from neural_network import NetworkWrapper
-from mcts import MCTS
+from mcts_fast import MCTS
 
 
 #Players
@@ -99,7 +99,7 @@ def play_game(ai_player, random_player, ai_color, max_moves=200):
     }
 
 
-# ── Evaluation loop ────────────────────────────────────────────────
+# Evaluation loop
 
 def evaluate(network_wrapper, num_games, num_simulations):
     ai = AIPlayer(network_wrapper, num_simulations)
@@ -175,8 +175,7 @@ def evaluate(network_wrapper, num_games, num_simulations):
     }
 
 
-# ── Pretty-print results ───────────────────────────────────────────
-
+#Pretty-print results
 def print_results(r, model_label):
     elo_s = f"{r['elo']:+.0f}" if abs(r["elo"]) < 9999 else ("∞" if r["elo"] > 0 else "-∞")
 

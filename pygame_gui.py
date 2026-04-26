@@ -19,7 +19,7 @@ from config import (
 )
 from checkers_env import CheckersState
 from neural_network import NetworkWrapper
-from mcts import MCTS
+from mcts_fast import MCTS
 
 
 class CheckersGUI:
