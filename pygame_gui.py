@@ -25,7 +25,7 @@ from mcts_fast import MCTS
 class CheckersGUI:
     def __init__(self, model_path=None, ai_simulations=100):
         pygame.init()
-        pygame.display.set_caption("fuckass checkers please work please please")
+        pygame.display.set_caption("checkers reinforcement learning")
 
         self.screen = pygame.display.set_mode((G.WINDOW_W, G.WINDOW_H))
         self.clock = pygame.time.Clock()
@@ -360,7 +360,7 @@ class CheckersGUI:
         x = G.BOARD_PX + 15
         y = 15
 
-        title = self.title_font.render("LAM (LooiLeAttMurt)", True, (220, 220, 220))
+        title = self.title_font.render("Checkers RL", True, (220, 220, 220))
         self.screen.blit(title, (x, y))
         y += 35
         subtitle = self.font.render("Checkers", True, (180, 180, 180))
